@@ -1,0 +1,22 @@
+<!-- Products section -->
+<section class="main-section">
+    <!-- Grid -->
+    <div class="container-auto ">
+        <h1 class="section-head text-center "> All Category </h1>
+
+        <div class="grid sm:grid-cols-1  md:grid-cols-2  lg:grid-cols-3 ">
+            @for( Category of allCategories ; track Category._id ){
+            <div class="outter p-3">
+                <div class="product p-2 group">
+                    <div  >
+                        <div>
+                            <img [src]="Category.image"    class="w-100 h-100 object-cover rounded-lg transition-transform duration-500 "  [alt]="Category.name">
+                        </div>
+                          <h1 class=" text-emerald-600 mt-4 text-center font-bold text-4xl">{{Category.name}}</h1>
+                    </div>
+
+                </div>
+            </div>
+            }
+        </div>
+    </div>

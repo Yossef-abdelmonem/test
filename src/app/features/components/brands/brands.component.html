@@ -1,0 +1,54 @@
+<section class="py-8 bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-4">
+
+    <!-- Page Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">All Brands</h1>
+      <p class="text-gray-600">Discover products from your favorite brands</p>
+    </div>
+
+
+
+
+    <!-- Brands Grid -->
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+
+        @for (brand of allbrand; track brand._id) {
+          <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer border border-gray-100" >
+
+            <!-- Brand Logo Container -->
+            <div class="relative overflow-hidden bg-gray-50 flex items-center justify-center h-32 p-4">
+              <img [src]="brand.image"
+                   [alt]="brand.name"
+                   class="max-w-full max-h-full object-contain group-hover:transform group-hover:rotate-3 transition-all duration-300"
+                   loading="lazy">
+
+              <!-- Hover Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <!-- Fallback placeholder -->
+
+            </div>
+
+            <!-- Brand Info -->
+            <div class="p-4 text-center border-t border-gray-100">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-emerald-600 transition-colors duration-300">
+                {{ brand.name }}
+              </h3>
+            </div>
+
+            <!-- Brand Badge -->
+            <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="bg-emerald-500 text-white text-xs px-2 py-1 rounded-full">
+                Brand
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+
+
+  </div>
+</section>
